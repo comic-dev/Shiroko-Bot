@@ -1,0 +1,21 @@
+{
+  "name": "shiroko-bot",
+  "version": "0.0.1b",
+  "description": "A simple to use Discord Bot",
+  "main": "dist/index.js",
+  "author": "Fascinated#4735",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.14.35",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "erela.js": "^2.3.2",
+    "erela.js-spotify": "^1.2.0",
+    "ms": "^2.1.3",
+    "typescript": "^4.2.3",
+    "@bat-framework": "file:C:\\Users\\Liam Miles\\Desktop\\Projects\\Bat Bot\\Bat Framework\\dist"
+  },
+  "devDependencies": {
+    "@types/ms": "^0.7.31"
+  }
+}
