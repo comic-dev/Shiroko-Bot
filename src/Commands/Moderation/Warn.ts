@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js'
+import { Client, DMChannel, Message } from 'discord.js'
 import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
 import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
 import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
@@ -33,7 +33,7 @@ module.exports = class WarnCommand extends CommandBase {
 		}
 		const reason = args.slice(1).join(" ");
 		channel.send(`You have **warned** ${target.user.username}#${target.user.discriminator} ${args.length > 1 ? `for **${reason}**` : ""}`)
-		target.createDM().then(dmChannel => {
+		target.createDM().then((dmChannel: DMChannel) => {
 			dmChannel.send(`You have been warned by **${author.username}#${author.discriminator}** ${args.length > 1 ? `for **${reason}**` : ""}`);
 		});
 		let warnings = utils.objectToMap(guildData.getData(`warnings`));

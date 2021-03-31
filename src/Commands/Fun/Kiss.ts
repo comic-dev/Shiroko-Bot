@@ -1,4 +1,4 @@
-import { Message, MessageEmbed } from 'discord.js'
+import { Client, Message, MessageEmbed } from 'discord.js'
 import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
 import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
 import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
@@ -29,7 +29,7 @@ module.exports = class KissCommand extends CommandBase {
 		});
 	}
 
-	async run(instance: BatClient, client: any, message: Message, args: string[], guildData: Guild) {
+	async run(instance: BatClient, client: Client, message: Message, args: string[], guildData: Guild) {
 		if (args.length < 1) {
 			message.channel.send(`You need to provide a user to kiss.`);
 			return;
