@@ -1,8 +1,7 @@
 import Discord from 'discord.js';
 import Client from '../../Bat Bot/Bat Framework/dist/Client/BatClient';
 
-import dotenv from 'dotenv';
-dotenv.config()
+const Config = require('../config.json');
 
 const { version } = require('../package.json');
 const client: Discord.Client = new Discord.Client({
@@ -36,11 +35,11 @@ const Bot: Client = new Client(client, {
         '510639833811517460'
     ]
 });
-Bot.setMongoPath(process.env.MONGO_URI!);
+Bot.setMongoPath(Config.mongo_uri);
 Bot.setDefaultPrefix('!');
 
 Bot.on('databaseConnected', () => {
     console.log('Shiroko > Database connected!');
 });
 
-client.login(process.env.TOKEN);
+client.login(Config.token);

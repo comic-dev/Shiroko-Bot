@@ -3,6 +3,8 @@ import FeatureBase from '../../../Bat Bot/Bat Framework/dist/Feature/FeatureBase
 import { Manager, Player, Track, Node, Payload } from "erela.js";
 import Spotify from 'erela.js-spotify';
 
+const Config = require('../../config.json');
+
 module.exports = class MusicFeature extends FeatureBase {
 	constructor() {
 		super();
@@ -10,28 +12,12 @@ module.exports = class MusicFeature extends FeatureBase {
 
 	async init(instance: BatClient, client: any) {
 		client.manager = new Manager({
-			nodes: [
-				{
-					host: "144.76.70.48",
-					port: 2333,
-					password: "wheuiwqehuiqwehuiwqehui",
-				},
-				{
-					host: "144.76.70.59",
-					port: 2333,
-					password: "wheuiwqehuiqwehuiwqehui",
-				},
-				{
-					host: "144.76.70.60",
-					port: 2333,
-					password: "wheuiwqehuiqwehuiwqehui",
-				},
-			],
+			nodes: Config.music.nodes,
 			plugins: [
 				// Initiate the plugin and pass the two required options.
 				new Spotify({
-					clientID: "9bf0f14a875441a78b688894a3fba16f",
-					clientSecret: "cd1c74c5f5d54fb2b26efaeb6effa6c1"
+					clientID: Config.music.spotify.clientID,
+					clientSecret: Config.music.spotify.clientSecret
 				})
 			],
 			send(id: string, payload: Payload) {
