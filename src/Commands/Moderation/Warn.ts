@@ -36,27 +36,27 @@ module.exports = class WarnCommand extends CommandBase {
 		target.createDM().then((dmChannel: DMChannel) => {
 			dmChannel.send(`You have been warned by **${author.username}#${author.discriminator}** ${args.length > 1 ? `for **${reason}**` : ""}`);
 		});
-		let warnings = utils.objectToMap(guildData.getData(`warnings`));
-		console.log(warnings)
-		if (warnings == undefined) {
-			warnings = await guildData.setData(`warnings`, new Map());
+		if (guildData.getData(`warnings`) == null) {
+			await guildData.setData(`warnings`, new Map<String, []>(), true);
 		}
-		console.log(warnings)
+		let warnings = utils.objectToMap(guildData.getData(`warnings`));
 		if (warnings == undefined) {
 			channel.send(`There was an error whilst accessing the database.`);
 			return;
 		}
-		let targetWarnings = warnings.get(`${target.id}`);
+		console.log(warnings)
+		let targetWarnings = warnings.get(target.id);
+		console.log(targetWarnings)
 		if (targetWarnings == undefined) {
-			targetWarnings = new Array();
+			targetWarnings = [];
 		}
 		targetWarnings.push({
 			id: `1`,
 			punisher: `${author.username}#${author.discriminator}`,
 			reason: reason || "No reason provided."
 		});
-		warnings.set(`${target.id}`, targetWarnings);
+		warnings.set(target.id, targetWarnings);
 		console.log(warnings)
-		guildData.setData(`warnings`, warnings, true);
+		await guildData.setData(`warnings`, warnings, true);
 	}
 }

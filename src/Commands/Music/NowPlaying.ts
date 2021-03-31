@@ -55,7 +55,7 @@ module.exports = class NowPlayingCommand extends CommandBase {
 				
 				\`${this.formatBar(player.position, song.duration)}\`
 				
-				\`${utils.formatSongTime(player.position / 1000)} / ${utils.formatSongTime(song.duration / 1000)}\`
+				\`${utils.formatTime(player.position, true)} / ${utils.formatTime(song.duration, true)}\`
 
 				Requested By: \`${requester.username}#${requester.discriminator}\`
 				`

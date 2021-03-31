@@ -117,11 +117,6 @@ module.exports = class SearchPlayCommand extends CommandBase {
 	}
 
 	loadSong(song: Track, djChannel: TextChannel | DMChannel | NewsChannel, player: Player) {
-		if (song.duration > 3600 * 1000) {
-			djChannel.send(`You cant play songs that are longer than **1 hour**.`)
-			return;
-		}
-
 		player.queue.add(song);
 		djChannel.send(`Queuing song \`${song.title}\``);
 		if (!player.playing && !player.paused && !player.queue.size)
