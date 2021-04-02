@@ -12,7 +12,9 @@ module.exports = class PauseResumeCommand extends CommandBase {
 			name: 'pause',
 			description: 'Pauses/Resumes the currently playing song.',
 			category: "music",
-			aliases: ['resume']
+			aliases: [
+				'resume'
+			]
 		});
 	}
 

@@ -14,7 +14,9 @@ module.exports = class VolumeCommand extends CommandBase {
 			description: 'Sets the volume from **0-100**.',
 			category: "music",
 			usage: "<volume>",
-			aliases: ['vol']
+			aliases: [
+				'vol'
+			]
 		});
 	}
 

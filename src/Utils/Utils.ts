@@ -15,12 +15,12 @@ export default class Utils {
 
 	formatTime(milliseconds: number, minimal: boolean = false): string {
 		if (!milliseconds || isNaN(milliseconds) || milliseconds <= 0) {
-			return "00:05";
+			return "00:00";
 			//throw new RangeError("Utils#formatTime(milliseconds: number) Milliseconds must be a number greater than 0");
 		}
 
 		if (typeof minimal !== "boolean") {
-			return "00:05";
+			return "00:00";
 			//throw new RangeError("Utils#formatTime(milliseconds: number, minimal: boolean) Minimal must be a boolean");
 		}
 
@@ -91,11 +91,13 @@ export default class Utils {
 	}
 
 	async getTarget(message: Message, arg: string): Promise<GuildMember | undefined> {
+		if (message.guild == null) return undefined;
+
 		const messageMentions = message.mentions.members;
-		if (messageMentions) {
+		if (messageMentions?.first() !== undefined) {
 			return messageMentions.first();
 		}
-		const targetById = await message.guild?.members.fetch(arg);
+		const targetById = await message.guild.members.fetch(arg);
 		if (targetById) {
 			return targetById;
 		}

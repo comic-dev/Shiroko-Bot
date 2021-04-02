@@ -102,12 +102,6 @@ module.exports = class HelpCommand extends CommandBase {
 			return;
 		}
 
-		commands = commands.sort(function (a, b) {
-			if (a.name < b.name) { return -1; }
-			if (a.name > b.name) { return 1; }
-			return 0;
-		})
-
 		let description = '';
 		commands.forEach(command => {
 			const perms = command.userPermissions;
@@ -118,7 +112,7 @@ module.exports = class HelpCommand extends CommandBase {
 				})
 				permissions = permissions.substring(0, permissions.length - 2);
 			}
-			description += `**${prefix}${this.capitalize(command.name)}** - ${command.description} ${permissions !== '' ? `[${permissions}]` : ""}\n`
+			description += `**${prefix}${command.name.toLowerCase()}** - ${command.description} ${permissions !== '' ? `[${permissions}]` : ""}\n`
 		});
 		embed.setDescription(description);
 		message.channel.send(embed);

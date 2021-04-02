@@ -13,7 +13,10 @@ module.exports = class StopCommand extends CommandBase {
 			name: 'stop',
 			description: 'Stops the current song and cleared the queue.',
 			category: "music",
-			aliases: ['disconnect', 'leave']
+			aliases: [
+				'disconnect',
+				'leave'
+			]
 		});
 	}
 

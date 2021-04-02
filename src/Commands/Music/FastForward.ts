@@ -15,7 +15,9 @@ module.exports = class FastForwardCommand extends CommandBase {
 			description: 'Fast forwards the song a specified amount.',
 			category: "music",
 			usage: "<time>",
-			aliases: ['ff']
+			aliases: [
+				'ff'
+			]
 		});
 	}
 

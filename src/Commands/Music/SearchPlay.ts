@@ -11,7 +11,9 @@ module.exports = class SearchPlayCommand extends CommandBase {
 			description: 'Play a song using a **1-5** selection.',
 			category: "music",
 			usage: "<query>",
-			aliases: ['sp'],
+			aliases: [
+				'sp'
+			],
 
 		});
 	}
@@ -124,7 +126,7 @@ module.exports = class SearchPlayCommand extends CommandBase {
 	}
 
 	getNodeId(manager: Manager, node: Node): string {
-		let index = 1;
+		let index = 0;
 		manager.nodes.forEach(nodee => {
 			if (nodee.options.host !== node.options.host) {
 				index++;

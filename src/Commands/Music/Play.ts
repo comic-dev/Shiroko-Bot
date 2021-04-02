@@ -11,7 +11,9 @@ module.exports = class PlayCommand extends CommandBase {
 			description: 'Plays a song or playlist that is provided.',
 			category: "music",
 			usage: "<query>",
-			aliases: ['p']
+			aliases: [
+				'p'
+			]
 		});
 	}
 
@@ -50,6 +52,13 @@ module.exports = class PlayCommand extends CommandBase {
 		if (!voiceChannel.members.has(client.user.id)) {
 			djChannel.send(`Joined **${voiceChannel.name}** and bound to <#${djChannel.id}>\n*You are using music node ${this.getNodeId(manager, player.node)}*`);
 			player.connect();
+
+			setTimeout(() => {
+				if (!voiceChannel.members.has(client.user.id)) {
+					djChannel.send(`Failed to connect to **${voiceChannel.name}**. Do I have permission to connect?`);
+					player.destroy();
+				}
+			}, 400);
 		}
 			
 		switch (results.loadType) {
@@ -91,7 +100,7 @@ module.exports = class PlayCommand extends CommandBase {
 
 	loadSong(results: SearchResult, djChannel: TextChannel | DMChannel | NewsChannel, player: Player) {
 		const song = results.tracks[0];
-		
+
 		player.queue.add(song);
 		djChannel.send(`Queuing song \`${song.title}\``);
 		if (!player.playing && !player.paused && !player.queue.size)
@@ -99,7 +108,7 @@ module.exports = class PlayCommand extends CommandBase {
 	}
 
 	getNodeId(manager: Manager, node: Node): string {
-		let index = 1;
+		let index = 0;
 		manager.nodes.forEach(nodee => {
 			if (nodee.options.host !== node.options.host) {
 				index++;

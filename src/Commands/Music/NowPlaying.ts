@@ -13,7 +13,9 @@ module.exports = class NowPlayingCommand extends CommandBase {
 			name: 'nowplaying',
 			description: 'Information about the currently playing song.',
 			category: "music",
-			aliases: ['np']
+			aliases: [
+				'np'
+			]
 		});
 	}
 
