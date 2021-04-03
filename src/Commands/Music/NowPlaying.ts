@@ -62,6 +62,8 @@ module.exports = class NowPlayingCommand extends CommandBase {
 				Requested By: \`${requester.username}#${requester.discriminator}\`
 				`
 			)
+			.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+			.setTimestamp()
 			.setThumbnail(song.thumbnail || "");
 		await message.channel.send(embed);
 	}

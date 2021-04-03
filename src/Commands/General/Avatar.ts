@@ -45,6 +45,8 @@ module.exports = class AvatarCommand extends CommandBase {
 		} else {
 			embed.setAuthor(`Your Avatar`, client.user?.displayAvatarURL({ size: 2048 }));
 			embed.setImage(author.displayAvatarURL({ size: 4096, dynamic: true }));
+			embed.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+			embed.setTimestamp()
 		}
 		channel.send(embed);
 	}

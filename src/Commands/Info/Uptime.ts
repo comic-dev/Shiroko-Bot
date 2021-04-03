@@ -14,8 +14,6 @@ module.exports = class UptimeCommand extends CommandBase {
 	}
 
 	async run(instance: BatClient, client: Client, message: Message, args: string[], guildData: Guild) {
-		const uptime = process.uptime() * 1000;
-		const formatted = ms(uptime, { long: true });
-		message.channel.send(`Uptime: \`${formatted}\``);
+		message.channel.send(`Uptime: \`${ms(process.uptime() * 1000, { long: true })}\``);
 	}
 }

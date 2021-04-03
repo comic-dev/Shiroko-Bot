@@ -86,6 +86,8 @@ module.exports = class SearchPlayCommand extends CommandBase {
 					index++;
 				})
 				embed.setDescription(description);
+				embed.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+				embed.setTimestamp()
 				message.channel.send(embed);
 
 				const filter = (m: Message) => m.author.id == message.author.id;

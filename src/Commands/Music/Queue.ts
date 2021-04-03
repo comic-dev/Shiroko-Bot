@@ -50,6 +50,8 @@ module.exports = class QueueCommand extends CommandBase {
 			.setColor("GREEN")
 			.setAuthor("Queue ♪", client.user?.displayAvatarURL({ size: 2048 }))
 			.setDescription(description)
+			.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+			.setTimestamp()
 		)
 	}
 }

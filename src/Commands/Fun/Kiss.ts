@@ -47,6 +47,8 @@ module.exports = class KissCommand extends CommandBase {
 			.setColor("GREEN")
 			.setAuthor(`${message.author.username}#${message.author.discriminator} has kissed ${target.user.username}#${target.user.discriminator}`)
 			.setImage(KissUrls[Math.floor(Math.random() * KissUrls.length)])
+			.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+			.setTimestamp()
 		)
 	}
 }

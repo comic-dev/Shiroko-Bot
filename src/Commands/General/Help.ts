@@ -64,6 +64,9 @@ module.exports = class HelpCommand extends CommandBase {
 			}
 		});
 
+		embed.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+		embed.setTimestamp()
+
 		message.channel.send(embed);
 	}
 
@@ -84,6 +87,9 @@ module.exports = class HelpCommand extends CommandBase {
 			`
 		)
 
+		embed.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+		embed.setTimestamp()
+
 		message.channel.send(embed);
 	}
 
@@ -93,6 +99,8 @@ module.exports = class HelpCommand extends CommandBase {
 
 		embed.setColor("GREEN");
 		embed.setAuthor(`Help - ${this.capitalize(category)}`, client.user?.displayAvatarURL({ size: 2048 }));
+		embed.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+		embed.setTimestamp()
 
 		let commands = this.getCommandsFromCategory(instance, category);
 		if (commands.length < 1) {

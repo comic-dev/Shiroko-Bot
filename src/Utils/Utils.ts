@@ -104,11 +104,32 @@ export default class Utils {
 		return undefined;
 	}
 
-	objectToMap(obj: any) {
-		const mp = new Map();
-		Object.keys(obj).forEach((k) => {
-			mp.set(k, obj[k]);
-		});
-		return mp;
+	formatBytes(bytes: number): string {
+		if (bytes === 0) return '0 Bytes';
+		const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		const i = Math.floor(Math.log(bytes) / Math.log(1024));
+		return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(2))} ${sizes[i]}`;
+	}
+
+	objectToMap = (obj: any) => {
+		const keys = Object.keys(obj);
+		const map = new Map();
+		for (let i = 0; i < keys.length; i++) {
+			//inserting new key value pair inside map
+			map.set(keys[i], obj[keys[i]]);
+		};
+		return map;
 	};
+
+	// objectToMap(obj: any) {
+	// 	const mp = new Map();
+	// 	console.log(`--------------------------------`)
+	// 	console.log(obj)
+	// 	Object.keys(obj).forEach((k) => {
+	// 		mp.set(k, obj[k]);
+	// 		console.log(k)
+	// 	});
+	// 	console.log(`--------------------------------`)
+	// 	return mp;
+	// };
 }

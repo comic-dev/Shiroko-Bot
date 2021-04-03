@@ -44,11 +44,10 @@ module.exports = class WarnCommand extends CommandBase {
 			channel.send(`There was an error whilst accessing the database.`);
 			return;
 		}
-		console.log(warnings)
 		let targetWarnings = warnings.get(target.id);
-		console.log(targetWarnings)
 		if (targetWarnings == undefined) {
 			targetWarnings = [];
+			console.log(`target warnings was undefined`)
 		}
 		targetWarnings.push({
 			id: `1`,
@@ -56,7 +55,6 @@ module.exports = class WarnCommand extends CommandBase {
 			reason: reason || "No reason provided."
 		});
 		warnings.set(target.id, targetWarnings);
-		console.log(warnings)
 		await guildData.setData(`warnings`, warnings, true);
 	}
 }

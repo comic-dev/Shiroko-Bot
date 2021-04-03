@@ -1,5 +1,4 @@
-import { Manager } from 'erela.js';
-import { Message, MessageEmbed } from 'discord.js'
+import { Message } from 'discord.js'
 import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
 import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
 import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
