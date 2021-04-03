@@ -37,8 +37,8 @@ module.exports = class BotInfoCommand extends CommandBase {
 			description += `\n**__System__**\n`;
 			description += `**>** Uptime: **${ms(os.uptime() * 1000, { long: true })}**\n`;
 			
-			const cpu = osu.cpu;
-			await cpu.usage().then(info => description += `**>** CPU Load: **${info}%**\n`);
+			osu.proc.totalProcesses().then(info => console.info(info))
+			await osu.cpu.usage().then(info => description += `**>** CPU Load: **${info}%**\n`);
 			description += `**>** Memory Usage: **${utils.formatBytes(os.freemem())}/${utils.formatBytes(os.totalmem())} (${Math.round(os.freemem() * 100 / os.totalmem())}% used)**\n`;
 		}
 

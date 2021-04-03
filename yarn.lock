@@ -16,6 +16,11 @@
     "combined-stream" "^1.0.8"
     "mime-types" "^2.1.12"
 
+"@types/giphy-api@^2.0.2":
+  "integrity" "sha512-tcYC4IcFs3FG9sGhGirQLl0ahyexxFJcgN0OKtkRXjwDoLgk7Si202aupgxFlC5pPUjJVFYD0e9Hv40psI6nnQ=="
+  "resolved" "https://registry.npmjs.org/@types/giphy-api/-/giphy-api-2.0.2.tgz"
+  "version" "2.0.2"
+
 "@types/ms@^0.7.31":
   "integrity" "sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA=="
   "resolved" "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
@@ -119,6 +124,11 @@
   "integrity" "sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.13.3.tgz"
   "version" "1.13.3"
+
+"giphy-api@^2.0.1":
+  "integrity" "sha512-6FKx6y26W1OqPtEOohvr3MOqCcYWajmz/svrjWm6XW2eP9mHvcQoi4aFg5afCakVF2b7zVllP0aNF45CGHZn+A=="
+  "resolved" "https://registry.npmjs.org/giphy-api/-/giphy-api-2.0.1.tgz"
+  "version" "2.0.1"
 
 "mime-db@1.46.0":
   "integrity" "sha512-svXaP8UQRZ5K7or+ZmfNhg2xX3yKDMUzqadsSqi4NCH/KomcH75MAMYAGVlvXn4+b/xOPhS3I2uHKRUzvjY7BQ=="

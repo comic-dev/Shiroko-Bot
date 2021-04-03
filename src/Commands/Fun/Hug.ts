@@ -9,11 +9,11 @@ const giphs = giphy();
 import Utils from '../../Utils/Utils';
 const utils: Utils = new Utils();
 
-module.exports = class KissCommand extends CommandBase {
+module.exports = class HugCommand extends CommandBase {
 	constructor() {
 		super({
-			name: 'kiss',
-			description: 'Kiss another member.',
+			name: 'slap',
+			description: 'Slap another member.',
 			category: "fun",
 			usage: "<member>"
 		});
@@ -21,7 +21,7 @@ module.exports = class KissCommand extends CommandBase {
 
 	async run(instance: BatClient, client: Client, message: Message, args: string[], guildData: Guild) {
 		if (args.length < 1) {
-			message.channel.send(`You need to provide a user to kiss.`);
+			message.channel.send(`You need to provide a user to slap.`);
 			return;
 		}
 		const target = await utils.getTarget(message, args[0]);
@@ -30,11 +30,11 @@ module.exports = class KissCommand extends CommandBase {
 			return;
 		}
 		if (target.id == message.author.id) {
-			message.channel.send(`How do you plan to kiss yourself?`);
+			message.channel.send(`How do you plan to slap yourself?`);
 			return;
 		}
 		giphs.search({
-			q: 'anime kiss',
+			q: 'anime slap',
 			rating: 'pg-13'
 		}, (error, res) => {
 			if (error) {
@@ -42,7 +42,7 @@ module.exports = class KissCommand extends CommandBase {
 			} else {
 				message.channel.send(new MessageEmbed()
 					.setColor("GREEN")
-					.setAuthor(`${message.author.username}#${message.author.discriminator} has kissed ${target.user.username}#${target.user.discriminator}`)
+					.setAuthor(`${message.author.username}#${message.author.discriminator} has slapped ${target.user.username}#${target.user.discriminator}`)
 					.setImage(res.data[Math.floor(Math.random() * res.data.length)].images.original.url)
 					.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
 					.setTimestamp()
