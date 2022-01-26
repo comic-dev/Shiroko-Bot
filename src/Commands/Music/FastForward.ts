@@ -1,8 +1,8 @@
 import { Player } from 'erela.js';
 import { Message } from 'discord.js'
-import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
-import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
-import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
+import BatClient from '@imfascinated/bat-framework/dist/Client/BatClient';
+import CommandBase from '@imfascinated/bat-framework/dist/Command/CommandBase';
+import Guild from '@imfascinated/bat-framework/dist/Guild/Guild';
 import Utils from '../../Utils/Utils';
 import ms from 'ms';
 

@@ -1,8 +1,8 @@
 import { Manager, Node, Player, SearchResult, Track } from 'erela.js';
 import { Message, TextChannel, DMChannel, NewsChannel } from 'discord.js'
-import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
-import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
-import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
+import BatClient from '@imfascinated/bat-framework/dist/Client/BatClient';
+import CommandBase from '@imfascinated/bat-framework/dist/Command/CommandBase';
+import Guild from '@imfascinated/bat-framework/dist/Guild/Guild';
 
 module.exports = class PlayCommand extends CommandBase {
 	constructor() {

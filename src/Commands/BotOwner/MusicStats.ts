@@ -1,8 +1,7 @@
 import { Manager } from 'erela.js';
 import { Message, MessageEmbed } from 'discord.js'
-import BatClient from '../../../../Bat Bot/Bat Framework/dist/Client/BatClient';
-import CommandBase from '../../../../Bat Bot/Bat Framework/dist/Command/CommandBase';
-import Guild from '../../../../Bat Bot/Bat Framework/dist/Guild/Guild';
+import BatClient from '@imfascinated/bat-framework/dist/Client/BatClient';
+import CommandBase from '@imfascinated/bat-framework/dist/Command/CommandBase';
 
 module.exports = class MusicStatsCommand extends CommandBase {
 	constructor() {
@@ -14,7 +13,7 @@ module.exports = class MusicStatsCommand extends CommandBase {
 		});
 	}
 
-	async run(instance: BatClient, client: any, message: Message, args: string[], guildData: Guild) {
+	async run(_instance: BatClient, client: any, message: Message) {
 		const manager: Manager = await client.manager;
 
 		let description = '';
