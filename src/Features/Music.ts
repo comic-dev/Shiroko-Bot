@@ -1,5 +1,5 @@
-import BatClient from '../../../Bat Bot/Bat Framework/dist/Client/BatClient';
-import FeatureBase from '../../../Bat Bot/Bat Framework/dist/Feature/FeatureBase';
+import BatClient from '@imfascinated/bat-framework/dist/Client/BatClient';
+import FeatureBase from '@imfascinated/bat-framework/dist/Feature/FeatureBase';
 import { Manager, Player, Track, Node, Payload } from "erela.js";
 import Spotify from 'erela.js-spotify';
 import { Guild, GuildMember, VoiceState } from 'discord.js';
