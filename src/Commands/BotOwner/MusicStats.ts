@@ -36,7 +36,7 @@ module.exports = class MusicStatsCommand extends CommandBase {
 			.setAuthor("Music Node Stats", client.user?.displayAvatarURL({ size: 2048 }))
 			.setColor(`GREEN`)
 			.setDescription(description)
-			.setFooter(`Command executed by ${message.author.username}#${message.author.discriminator}`)
+			.setFooter(`Command executed by ${message.author.tag}`)
 			.setTimestamp()
 		)
 	}
