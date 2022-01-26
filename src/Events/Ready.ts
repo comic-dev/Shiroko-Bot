@@ -1,6 +1,6 @@
 import { Client } from 'discord.js';
-import BatClient from '../../../Bat Bot/Bat Framework/dist/Client/BatClient';
-import EventBase from '../../../Bat Bot/Bat Framework/dist/Event/EventBase';
+import BatClient from '.@imfascinated/bat-framework/dist/Client/BatClient';
+import EventBase from '@imfascinated/bat-framework/dist/Event/EventBase';
 
 module.exports = class ReadyEvent extends EventBase {
 	constructor() {
